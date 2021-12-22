@@ -1,5 +1,16 @@
 from brownie import accounts, config, network, MockV3Aggregator
 from web3 import Web3
+import os
+
+UNISWAP_BATCH_SIZE = 1000
+FACTORY_ADDRESS = [
+    os.getenv("CRO_FACTORY_ADDRESS"),
+    os.getenv("ZEUS_FACTORY_ADDRESS"),
+    os.getenv("LUA_FACTORY_ADDRESS"),
+    os.getenv("SUSHISWAP_FACTORY_ADDRESS"),
+    os.getenv("UNISWAP_FACTORY_ADDRESS"),
+]
+BATCH_COUNT_LIMIT = 100
 
 FORKED_LOCAL_ENVIRONMENTS = ["mainnet-fork"]
 DECIMALS = 8
